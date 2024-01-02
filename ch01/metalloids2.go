@@ -2,6 +2,9 @@
 // including atomic number, mass, moles, and atom count found
 // in 100 grams of each element using the mole unit.
 // See http://en.wikipedia.org/wiki/Mole_(unit)
+
+//go:build ignore
+
 package main
 
 import "fmt"

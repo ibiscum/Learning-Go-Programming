@@ -1,5 +1,8 @@
 // Calculate sum of all multiple of 3 and 5 less MAX value.
 // See https://projecteuler.net/problem=1
+
+//go:build ignore
+
 package main
 
 import (
