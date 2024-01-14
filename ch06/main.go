@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/vladimirvivien/learning-go/ch06/current"
-	"github.com/vladimirvivien/learning-go/ch06/power"
-	"github.com/vladimirvivien/learning-go/ch06/power/ir"
-	"github.com/vladimirvivien/learning-go/ch06/power/vr"
-	res "github.com/vladimirvivien/learning-go/ch06/resistor"
-	"github.com/vladimirvivien/learning-go/ch06/volt"
+	"github.com/ibiscum/Learning-Go-Programming/ch06/current"
+	"github.com/ibiscum/Learning-Go-Programming/ch06/power"
+	"github.com/ibiscum/Learning-Go-Programming/ch06/power/ir"
+	"github.com/ibiscum/Learning-Go-Programming/ch06/power/vr"
+	res "github.com/ibiscum/Learning-Go-Programming/ch06/resistor"
+	"github.com/ibiscum/Learning-Go-Programming/ch06/volt"
 )
 
 var (
