@@ -3,8 +3,6 @@
 // in 100 grams of each element using the mole unit.
 // See http://en.wikipedia.org/wiki/Mole_(unit)
 
-//go:build ignore
-
 package main
 
 import "fmt"
@@ -33,13 +31,13 @@ func (m metalloid) String() string {
 }
 
 var metalloids = []metalloid{
-	metalloid{"Boron", 5, 10.81},
-	metalloid{"Silicon", 14, 28.085},
-	metalloid{"Germanium", 32, 74.63},
-	metalloid{"Arsenic", 33, 74.921},
-	metalloid{"Antimony", 51, 121.760},
-	metalloid{"Tellerium", 52, 127.60},
-	metalloid{"Polonium", 84, 209.0},
+	{"Boron", 5, 10.81},
+	{"Silicon", 14, 28.085},
+	{"Germanium", 32, 74.63},
+	{"Arsenic", 33, 74.921},
+	{"Antimony", 51, 121.760},
+	{"Tellerium", 52, 127.60},
+	{"Polonium", 84, 209.0},
 }
 
 // find #moles and atoms

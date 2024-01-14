@@ -1,8 +1,12 @@
+//go:build ignore
+
 package main
 
-import "fmt"
-import "math/rand"
-import "time"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 var greetings = [][]string{
 	{"Hello, World!", "English"},

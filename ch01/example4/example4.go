@@ -1,5 +1,3 @@
-//go:build ignore
-
 package main
 
 import "fmt"
@@ -10,6 +8,6 @@ type Message string
 
 func (msg Message) String() string { return string("<<" + msg + ">>") }
 func main() {
-	msg := Message("Mastering Go in ")
+	msg := Message("Mastering Go in")
 	fmt.Println(msg, steps, "steps.")
 }

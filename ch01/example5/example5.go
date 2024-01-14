@@ -1,5 +1,3 @@
-//xgo:build ignore
-
 package main
 
 import "fmt"

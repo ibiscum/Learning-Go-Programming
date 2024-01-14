@@ -1,4 +1,12 @@
+//go:build ignore
+
 package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
 
 func printHtml(address string) {
 	rsp, err := http.Get(address)

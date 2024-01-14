@@ -1,3 +1,5 @@
+//go:build ignore
+
 package main
 
 import "fmt"
@@ -12,7 +14,7 @@ func main() {
 	name = "Sun"
 	desc = "Star"
 	radius = 685800
-	mass = 1.989E+30
+	mass = 1.989e+30
 	active = true
 	satellites = []string{
 		"Mercury",
