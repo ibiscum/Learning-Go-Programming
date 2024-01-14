@@ -1,4 +1,4 @@
-package lib
+package ch02lib
 
 import "fmt"
 
