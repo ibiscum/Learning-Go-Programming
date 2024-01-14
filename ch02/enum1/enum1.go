@@ -1,5 +1,3 @@
-//go:build ignore
-
 package main
 
 import (
@@ -12,7 +10,10 @@ const (
 	StarBrightGiant
 	StarGiant
 	StarSubGiant
-	StarDwarf
+)
+
+const (
+	StarDwarf = iota
 	StarSubDwarf
 	StarWhiteDwarf
 	StarRedDwarf
