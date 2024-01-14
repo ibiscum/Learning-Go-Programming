@@ -1,5 +1,3 @@
-//go:build ignore
-
 package main
 
 import "fmt"
@@ -30,5 +28,6 @@ func main() {
 	fmt.Println(desc)
 	fmt.Println("Radius (km)", radius)
 	fmt.Println("Mass (kg)", mass)
+	fmt.Println("Active", active)
 	fmt.Println("Satellites", satellites)
 }
