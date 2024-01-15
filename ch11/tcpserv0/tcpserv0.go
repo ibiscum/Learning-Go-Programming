@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	curr "github.com/vladimirvivien/learning-go/ch11/curr0"
+	curr "github.com/ibiscum/Learning-Go-Programming/ch11/curr0"
 )
 
 var currencies = curr.Load("./data.csv")

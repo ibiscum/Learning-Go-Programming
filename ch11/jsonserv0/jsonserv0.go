@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/vladimirvivien/learning-go/ch11/curr1"
+	"github.com/ibiscum/Learning-Go-Programming/ch11/curr1"
 )
 
 // Simple json server for currency service
