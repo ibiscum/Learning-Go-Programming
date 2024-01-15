@@ -5,13 +5,18 @@ import (
 	"io"
 	"net"
 	"net/http"
-	"time"
 	"os"
+	"time"
 )
 
 func main() {
 	client := &http.Client{
-		Timeout: 21 * time.Second,
+		Transport: &http.Transport{
+			DisableKeepAlives: true,
+			Dial: (&net.Dialer{
+				Timeout: 30 * time.Second,
+			}).Dial,
+		},
 	}
 	resp, err := client.Get("http://tools.ietf.org/rfc/rfc7540.txt")
 	if err != nil {

@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 // msg implements handler
 type msg string

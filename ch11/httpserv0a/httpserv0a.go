@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"net/http"
 )
-import "net/http"
 
-// simple server, no multiplex
+// msg implements handler
 type msg string
 
 func (m msg) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
@@ -15,13 +14,9 @@ func (m msg) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 	fmt.Fprint(resp, m)
 }
 
+// creates server and starts
 func main() {
 	msgHandler := msg("Hello from high above!")
-	server := http.Server{
-		Addr:         ":4040",
-		Handler:      msgHandler,
-		ReadTimeout:  time.Second * 5,
-		WriteTimeout: time.Second * 3,
-	}
+	server := http.Server{Addr: ":4040", Handler: msgHandler}
 	server.ListenAndServe()
 }

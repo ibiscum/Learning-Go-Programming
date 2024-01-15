@@ -1,5 +1,3 @@
-//go:build ignore
-
 package main
 
 import (
@@ -13,6 +11,8 @@ func main() {
 	//fmt.Printf("c3 = %v (%T)\n", c3, c3)
 	//e := 4.09
 	var c0 uint = 32
-	var c1 float32 = 1 << c0
+	//var c1 float32 = 1 << int(c0)
+	var c1 int = 1 << c0
+
 	fmt.Printf("c1=%v,%T", c1, c1)
 }
