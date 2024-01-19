@@ -20,7 +20,7 @@ func updateName(p *person, name string) {
 
 func main() {
 	p := new(person)
-	p.name = "uknown"
+	p.name = "unknown"
 	p.title = "author"
 	p.street = "12345 Main street"
 	p.city, p.state = "Goville", "Go"

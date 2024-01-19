@@ -51,5 +51,6 @@ func main() {
 	fmt.Println("h2", h2)
 	scale2(0.5, h2)
 	fmt.Println("h2", h2)
-
+	h3 := join(h2, h2)
+	fmt.Println("h3", h3)
 }
