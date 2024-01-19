@@ -6,7 +6,7 @@ import (
 
 func main() {
 	// execute within same routine (1)
-	// each calls execute serially
+	// each call executes serially
 	count(10, 50, 10)
 	count(60, 100, 10)
 	count(110, 200, 20)

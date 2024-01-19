@@ -13,6 +13,7 @@ var days [7]string = [7]string{
 	"Saturday",
 	"Sunday",
 }
+
 var weekdays = [...]string{
 	"Monday",
 	"Tuesday",
@@ -24,8 +25,8 @@ var weekdays = [...]string{
 var truth = [256]bool{true}
 
 var histogram = [5]map[string]int{
-	map[string]int{"A": 12, "B": 1, "D": 15},
-	map[string]int{"man": 1344, "women": 844, "children": 577, "pets": 150},
+	{"A": 12, "B": 1, "D": 15},
+	{"man": 1344, "women": 844, "children": 577, "pets": 150},
 }
 
 var board = [4][2]int{
@@ -34,9 +35,16 @@ var board = [4][2]int{
 	{23, 4},
 	{51, 88},
 }
+
 var matrix = [2][2][2][2]byte{
 	{{{4, 4}, {3, 5}}, {{55, 12}, {22, 4}}},
 	{{{2, 2}, {7, 9}}, {{43, 0}, {88, 7}}},
+}
+
+func printDays(days [7]string) {
+	for i, val := range days {
+		fmt.Printf("Day %d = %s\n", i, val)
+	}
 }
 
 func main() {
@@ -47,10 +55,4 @@ func main() {
 	fmt.Printf("%T: %v\n", histogram, histogram)
 
 	printDays(days)
-}
-
-func printDays(days [7]string) {
-	for i, val := range days {
-		fmt.Printf("Day %d = %s\n", i, val)
-	}
 }
