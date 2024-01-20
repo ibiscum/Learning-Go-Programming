@@ -2,10 +2,11 @@ package foo
 
 import (
 	"fmt"
-	"foo/bar/bazz"
+
+	"github.com/ibiscum/Learning-Go-Programming/ch06-foo/foo/bazz"
 )
 
-func fooIt() {
+func FooIt() {
 	fmt.Println("Foo!")
 	bazz.Qux()
 }

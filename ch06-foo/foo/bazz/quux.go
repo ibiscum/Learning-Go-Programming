@@ -6,5 +6,5 @@ import (
 
 func Quux() {
 	Qux()
-	fmt.Println("gazz.Quux")
+	fmt.Println("bazz.Quux")
 }
