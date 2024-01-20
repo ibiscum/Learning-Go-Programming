@@ -14,6 +14,7 @@ const (
 type vehicle interface {
 	start()
 	stop()
+	operate()
 }
 
 type desc struct {
@@ -41,8 +42,14 @@ type truck struct {
 func (t truck) drive() {
 	fmt.Printf("Truck %s %s, on the go!\n", t.make, t.model)
 }
+
+func (t truck) stop() {
+	fmt.Printf("Truck %s %s, engine off!\n", t.make, t.model)
+}
+
 func (t truck) operate() {
 	t.start()
+	t.stop()
 	t.drive()
 }
 
@@ -58,8 +65,13 @@ func (p plane) fly() {
 	fmt.Printf("Aircraft %s %s clear for takeoff!\n", p.make, p.model)
 }
 
+func (p plane) stop() {
+	fmt.Printf("Aircraft %s %s engines off!\n", p.make, p.model)
+}
+
 func (p plane) operate() {
 	p.start()
+	p.stop()
 	p.fly()
 }
 

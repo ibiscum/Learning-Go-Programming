@@ -24,6 +24,7 @@ type gallon volume
 func newGal(qty float64) gallon {
 	return gallon{qty: qty, unit: galunit}
 }
+
 func (g gallon) String() string {
 	return volume(g).String()
 }
@@ -38,9 +39,11 @@ type quart volume
 func newQrt(qty float64) quart {
 	return quart{qty: qty, unit: qrtunit}
 }
+
 func (q quart) String() string {
 	return volume(q).String()
 }
+
 func (q quart) toCup() cup {
 	return newCup(q.qty * 4.0)
 }
@@ -51,22 +54,26 @@ type cup volume
 func newCup(qty float64) cup {
 	return cup{qty: qty, unit: cupunit}
 }
+
 func (c cup) String() string {
 	return volume(c).String()
 }
+
 func (c cup) toOunce() ounce {
 	return newOz(c.qty * 8.0)
 }
 
-//ounce type
+// ounce type
 type ounce volume
 
 func newOz(qty float64) ounce {
 	return ounce{qty: qty, unit: ozunit}
 }
+
 func (o ounce) String() string {
 	return volume(o).String()
 }
+
 func (o ounce) toCup() cup {
 	return newCup(o.qty * 0.125)
 }
