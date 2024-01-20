@@ -5,6 +5,7 @@ use (
     ./ch06
     ./ch06-foo
     ./ch06-foo/foo
+    ./ch06-foo/foo/bazz
     ./ch07
     ./ch11
 )
