@@ -1,4 +1,4 @@
-// anagram.go
+// anagram1.go
 //
 // This is an implementation of the anagram problem (Column 2)
 // from the popular Programming Pearls book (second ed) from
@@ -8,7 +8,7 @@
 // The data - dict.txt
 // The data file is a subset of the Linux dictionary file
 // found in /usr/share/dict/american-english. It is scrubbed of
-// all posessive nounds and made all lowe rcase.
+// all possessive nouns and made all lower case.
 package main
 
 import (
@@ -19,7 +19,7 @@ import (
 	"os"
 )
 
-// sortRunes is a simple insertion sort that sorts the runes of the given string.
+// sortRunes() is a simple insertion sort that sorts the runes of the given string.
 // By sorting the unicode chars of the string (i.e. "morning" -> "gimnnor")
 // the result can be used as a signature to create words in the same class.
 func sortRunes(str string) string {
@@ -37,10 +37,10 @@ func sortRunes(str string) string {
 	return string(runes)
 }
 
-// load loads the content of the specified file's name into
-// memory as an slice (array) of strings.  Notice the function
+// load() loads the content of the specified files' name into
+// memory as a slice (array) of strings.  Notice the function
 // also returns an error value that will be non-nil if an error
-// occured during the load process.
+// occurred during the load process.
 // Scanner.Split() uses a function that knows
 // to split the file records.  Here the code uses a provided function bufio.ScanLines
 // to do the job of splitting the records from the file and returns a word
@@ -68,7 +68,7 @@ func load(fname string) ([]string, error) {
 
 func main() {
 	// loads dictionary words in memory
-	words, err := load("dict.txt")
+	words, err := load("../dict.txt")
 
 	// test err for non-nil value.
 	// If err != nil, then the error is handled.
@@ -78,9 +78,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	// the next code snippet goes through the words slice
-	// and does the followings for each word in the slice:
-	// -  Creates a word signature by soriting the letters in the word itself.
+	// The next code snippet goes through the words slice
+	// and does the following for each word in the slice:
+	// -  Creates a word signature by sorting the letters in the word itself.
 	// -  Maps the word to its signature
 	// So, words with the same signature will be mapped together (i.e. abers -> sabre, bares, bears, saber, etc)
 	anagrams := make(map[string][]string)
@@ -89,7 +89,7 @@ func main() {
 		anagrams[wordSig] = append(anagrams[wordSig], word)
 	}
 
-	// prints the result
+	// Prints the result
 	for k, v := range anagrams {
 		fmt.Println(k, "->", v)
 	}
