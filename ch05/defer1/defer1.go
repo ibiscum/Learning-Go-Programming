@@ -14,7 +14,7 @@ func do(steps ...string) {
 func main() {
 	do(
 		"Find key",
-		"Aplly break",
+		"Apply break",
 		"Put key in ignition",
 		"Start car",
 	)

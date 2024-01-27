@@ -75,7 +75,7 @@ func reduceWords(tuples [][]string) map[string][]string {
 }
 
 func main() {
-	tuples := mapWords("dict.txt", bySigKv)
+	tuples := mapWords("../dict.txt", bySigKv)
 	anagrams := reduceWords(tuples)
 	for k, v := range anagrams {
 		fmt.Println(k, "->", v)

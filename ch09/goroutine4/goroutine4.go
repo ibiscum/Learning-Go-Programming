@@ -6,10 +6,14 @@ import (
 
 func main() {
 
-	go func() {
-		count(60, 100, 10)
-	}()
+	starts := []int{10, 40, 70, 100}
 
+	for _, j := range starts {
+		j := j
+		go func() {
+			count(j, j+20, 10)
+		}()
+	}
 
 	fmt.Scanln() // wait for enter
 }

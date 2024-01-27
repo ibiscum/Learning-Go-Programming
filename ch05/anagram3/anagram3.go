@@ -19,9 +19,9 @@ import (
 	"os"
 )
 
-var (
-	emptyFileNameError = errors.New("File name cannot be empty")
-)
+//var (
+//	errEmptyFileName = errors.New("file name cannot be empty")
+//)
 
 // sortRunes is a simple insertion sort that sorts the runes of the given string.
 // By sorting the unicode chars of the string (i.e. "morning" -> "gimnnor")
@@ -47,7 +47,7 @@ func sortRunes(str string) string {
 // occured during the load process.
 func load(fname string) ([]string, error) {
 	if fname == "" {
-		return nil, errors.New("Dictionary file name is empty")
+		return nil, errors.New("dictionary file name is empty")
 	}
 
 	// attempt to load dict file.
@@ -111,7 +111,7 @@ func makeAnagrams(words []string, fname string) {
 }
 
 func main() {
-	words, err := load("dict.txt")
+	words, err := load("../dict.txt")
 	if err != nil {
 		fmt.Println("Unable to load file:", err)
 		os.Exit(1)

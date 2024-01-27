@@ -33,7 +33,7 @@ func main() {
 		result <- r
 	}
 
-	// distribute work to two goroutines
+	// distribute work to three goroutines
 	go work()
 	go work()
 

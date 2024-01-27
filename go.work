@@ -11,5 +11,9 @@ use (
     ./ch06-foo/foo
     ./ch06-foo/foo/bazz
     ./ch07
+    ./ch08
+    ./ch09
+    ./ch10
     ./ch11
+    ./ch12
 )

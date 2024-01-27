@@ -1,8 +1,9 @@
 package main
 
-import "fmt"
-import "math"
-import "errors"
+import (
+	"fmt"
+	"math"
+)
 
 // The followings are a collection of functions
 // that implement simple operations for illustration purposes.
@@ -154,8 +155,8 @@ func main() {
 	fmt.Printf("isPrime(%d) returns %v\n", prime, isPrime(prime))
 
 	// func type, assignment
-	var addition func(int, int) int // a function type
-	addition = add
+	var addition func(int, int) int = add // a function type
+	// addition = add
 	fmt.Println("func add(op0,op1 int) int {return op0+op1}")
 	fmt.Println("addition := add")
 	fmt.Printf("addition(3,7) = %d\n", addition(3, 7))

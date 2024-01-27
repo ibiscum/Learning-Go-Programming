@@ -43,13 +43,13 @@ func sortRunes(str string) string {
 // occured during the load process.
 func load(fname string) ([]string, error) {
 	if fname == "" {
-		return nil, errors.New("Dictionary file name cannot be emtpy.")
+		return nil, errors.New("dictionary file name cannot be empty")
 	}
 
 	// attempt to load dict file.
 	file, err := os.Open(fname)
 	if err != nil {
-		return nil, fmt.Errorf("Unable to open file %s: %s", fname, err)
+		return nil, fmt.Errorf("unable to open file %s: %s", fname, err)
 	}
 	defer file.Close()
 
@@ -90,7 +90,7 @@ func mapWords(words []string) map[string][]string {
 }
 
 func main() {
-	words, err := load("dict.txt")
+	words, err := load("../dict.txt")
 	if err != nil {
 		fmt.Println("Unable to load file:", err)
 		os.Exit(1)
