@@ -3,6 +3,9 @@ go 1.20
 use (
     ./ch01
 	./ch02
+    ./ch03
+    ./ch04
+    ./ch05
     ./ch06
     ./ch06-foo
     ./ch06-foo/foo
