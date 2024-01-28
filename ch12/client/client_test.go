@@ -2,13 +2,13 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
 
-	"github.com/vladimirvivien/learning-go/ch12/vector"
+	"github.com/ibiscum/Learning-Go-Programming/ch12/vector"
 )
 
 func TestClientAdd(t *testing.T) {
@@ -20,7 +20,7 @@ func TestClientAdd(t *testing.T) {
 				return
 			}
 			// test incoming params
-			body, _ := ioutil.ReadAll(req.Body)
+			body, _ := io.ReadAll(req.Body)
 			params := strings.TrimSpace(string(body))
 			if params != "[[1,2],[3,4]]" {
 				t.Errorf("unexpected params '%v'", params)

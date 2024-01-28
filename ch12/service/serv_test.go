@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/vladimirvivien/learning-go/ch12/vector"
+	"github.com/ibiscum/Learning-Go-Programming/ch12/vector"
 )
 
 func TestVectorAdd(t *testing.T) {

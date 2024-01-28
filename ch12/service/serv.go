@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/vladimirvivien/learning-go/ch12/vector"
+	"github.com/ibiscum/Learning-Go-Programming/ch12/vector"
 )
 
 func add(resp http.ResponseWriter, req *http.Request) {
