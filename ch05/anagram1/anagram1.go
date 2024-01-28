@@ -41,13 +41,13 @@ func sortRunes(str string) string {
 // memory as a slice (array) of strings.  Notice the function
 // also returns an error value that will be non-nil if an error
 // occurred during the load process.
-// Scanner.Split() uses a function that knows
-// to split the file records.  Here the code uses a provided function bufio.ScanLines
+// Scanner.Split() uses a function that knows to split the file records.
+// Here the code uses a provided function bufio.ScanLines
 // to do the job of splitting the records from the file and returns a word
-// for each line read and saves in slice of words.
+// for each line read and saves it in a slice of words.
 func load(fname string) ([]string, error) {
 	if fname == "" {
-		return nil, errors.New("Dictionary file name cannot be emtpy.")
+		return nil, errors.New("dictionary file name cannot be empty")
 	}
 
 	// attempt to load dict file.
@@ -74,7 +74,7 @@ func main() {
 	// If err != nil, then the error is handled.
 	// In this context, the program ends.
 	if err != nil {
-		fmt.Println("Unable to load file:", err)
+		fmt.Println("Unable to load file: ", err)
 		os.Exit(1)
 	}
 

@@ -80,6 +80,7 @@ func write(fname string, anagrams map[string][]string) {
 		panic(msg)
 	}
 	defer file.Close()
+
 	for k, v := range anagrams {
 		output := fmt.Sprintf("%s -> %v\n", k, v)
 		file.WriteString(output)

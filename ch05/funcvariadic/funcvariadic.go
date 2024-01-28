@@ -20,7 +20,7 @@ func sum(nums ...float64) float64 {
 }
 
 func main() {
-	fmt.Printf("avg([1, 2.5, 3.75]) =%.2f\n", avg(1, 2.5, 3.75))
-	points := []float64{9, 4, 3.7, 7.1, 7.9, 9.2, 10}
+	fmt.Printf("avg([1, 2.5, 3.75]) = %.2f\n", avg(1, 2.5, 3.75))
+	points := []float64{9, 4, 3.7, 7.1, 7.9, 9.2, 10, 11}
 	fmt.Printf("sum(%v) = %.2f\n", points, sum(points...))
 }

@@ -14,5 +14,5 @@ func div(op0, op1 int) (int, int) {
 
 func main() {
 	q, r := div(71, 5)
-	fmt.Printf("div(71,5) -> q = %d, r = %d\n", q, r)
+	fmt.Printf("div(71, 5) -> q = %d, r = %d\n", q, r)
 }

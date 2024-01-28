@@ -1,4 +1,4 @@
-// anagram.go
+// anagram2.go
 //
 // This is an implementation of the anagram problem (Column 2)
 // from the popular Programming Pearls book (second ed) from
@@ -19,7 +19,7 @@ import (
 	"os"
 )
 
-// sortRunes is a simple insertion sort that sorts the runes of the given string.
+// sortRunes() is a simple insertion sort that sorts the runes of the given string.
 // By sorting the unicode chars of the string (i.e. "morning" -> "gimnnor")
 // the result can be used as a signature to create words in the same class.
 func sortRunes(str string) string {
@@ -37,8 +37,8 @@ func sortRunes(str string) string {
 	return string(runes)
 }
 
-// load loads the content of the specified file's name into
-// memory as an slice (array) of strings.  Notice the function
+// load() loads the content of the specified file's name into
+// memory as an slice (array) of strings. Notice the function
 // also returns an error value that will be non-nil if an error
 // occured during the load process.
 func load(fname string) ([]string, error) {
@@ -62,7 +62,7 @@ func load(fname string) ([]string, error) {
 	return lines, scanner.Err()
 }
 
-// write writes the map of anagrams to a file file specified by fname.
+// write() writes the map of anagrams to a file file specified by fname.
 // The use of os.OpenFile (instead of os.Create) is to demonstrate the use
 // of panic() which is generated when OpenFile returns an error.
 func write(fname string, anagrams map[string][]string) {
@@ -72,6 +72,7 @@ func write(fname string, anagrams map[string][]string) {
 		panic(msg)
 	}
 	defer file.Close()
+
 	for k, v := range anagrams {
 		output := fmt.Sprintf("%s -> %v\n", k, v)
 		file.WriteString(output)

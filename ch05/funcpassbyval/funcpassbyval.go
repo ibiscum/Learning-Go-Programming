@@ -7,7 +7,7 @@ import (
 
 func dbl(val float64) {
 	val = 2 * val // update param
-	fmt.Printf("dbl()=%.5f\n", val)
+	fmt.Printf("dbl() = %.5f\n", val)
 }
 
 func main() {

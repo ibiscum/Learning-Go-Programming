@@ -13,6 +13,6 @@ var (
 )
 
 func main() {
-	fmt.Printf("mul(25,7) = %d\n", mul(25, 7))
+	fmt.Printf("mul(25, 7) = %d\n", mul(25, 7))
 	fmt.Printf("sqr(13) = %d\n", sqr(13))
 }
