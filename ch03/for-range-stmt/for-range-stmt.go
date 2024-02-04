@@ -1,5 +1,3 @@
-//go:build ignore
-
 package main
 
 import (
@@ -15,7 +13,7 @@ type Curr struct {
 }
 
 var currencies = []Curr{
-	{"NOK", "Norwegian Krone", "Norwary", 578},
+	{"NOK", "Norwegian Krone", "Norway", 578},
 	{"KES", "Kenyan Shilling", "Kenya", 404},
 	{"DZD", "Algerian Dinar", "Algeria", 12},
 	{"AUD", "Australian Dollar", "Australia", 36},
@@ -27,7 +25,7 @@ var currencies = []Curr{
 	{"HTG", "Gourde", "Haiti", 332},
 	{"BWP", "Pula", "Botswana", 72},
 	{"CLP", "Chilean Peso", "Chile", 152},
-	{"HKD", "Hong Kong Dollar", "Hong Koong", 344},
+	{"HKD", "Hong Kong Dollar", "Hong Kong", 344},
 	{"HTG", "Gourde", "Haiti", 332},
 	{"TRY", "Turkish Lira", "Turkey", 949},
 	{"EUR", "Euro", "Belgium", 978},
@@ -38,11 +36,14 @@ var currencies = []Curr{
 	{"NZD", "New Zeland Dollar", "Tokelau", 554},
 }
 
-var sortedCurrs []Curr
+// var sortedCurrs []Curr
 
 func main() {
 	updateCurrency(978, Curr{"EUR", "Euro", "Greece", 978})
 	printCurrencies()
+	find("Tokelau")
+	doEmptyRange()
+
 }
 
 func updateCurrency(number int, newCurr Curr) {

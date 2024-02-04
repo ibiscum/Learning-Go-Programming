@@ -17,6 +17,6 @@ func isPrime(n int) bool {
 }
 
 func main() {
-	prime := 37
+	prime := 2791
 	fmt.Printf("isPrime(%d) = %v\n", prime, isPrime(prime))
 }

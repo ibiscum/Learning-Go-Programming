@@ -10,6 +10,7 @@ func main() {
 		0xBEEF,
 		0777,
 	}
+
 	for _, i := range vals {
 		if i == 0xBEEF {
 			fmt.Printf("Got %d\n", i)

@@ -31,7 +31,7 @@ func main() {
 	select {
 	case <-done:
 		fmt.Println("Done counting words!!!!")
-	case <-time.After(200 * time.Microsecond):
+	case <-time.After(300 * time.Microsecond):
 		fmt.Println("Sorry, took too long to count.")
 	}
 }
