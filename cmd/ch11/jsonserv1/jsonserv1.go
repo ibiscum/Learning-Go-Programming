@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ibiscum/Learning-Go-Programming/ch11/curr1"
+	"github.com/ibiscum/Learning-Go-Programming/internal/curr1"
 )
 
 // Simple json server for currency service

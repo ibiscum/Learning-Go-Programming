@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ibiscum/Learning-Go-Programming/ch12/vector"
+	"github.com/ibiscum/Learning-Go-Programming/internal/vector"
 )
 
 type vecClient struct {

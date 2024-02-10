@@ -16,7 +16,7 @@ type Currency struct {
 
 type CurrencyRequest struct {
 	Get   string `json:"get"`
-	Limit int    `json:limit`
+	Limit int    `json:"limit"`
 }
 
 func Load(path string) []Currency {
