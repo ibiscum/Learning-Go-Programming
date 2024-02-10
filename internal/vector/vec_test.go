@@ -2,8 +2,8 @@ package vector
 
 import (
 	"math"
-	"testing"
 	"os"
+	"testing"
 )
 
 func TestNewVector(t *testing.T) {
@@ -26,7 +26,7 @@ func TestVectorEqual(t *testing.T) {
 	var v2 SimpleVector = []float64{45, 44, 90}
 	t.Log(v1.Angle(v2), zero, v1.Angle(v2) <= zero)
 	if !v1.Eq(v2) {
-		t.Logf("Vectors are expected to be eqal")
+		t.Logf("Vectors are expected to be equal")
 		t.Fail()
 	}
 }
@@ -35,7 +35,7 @@ func TestVectorEqual2(t *testing.T) {
 	v1 := New(45, 44, 90)
 	var v2 SimpleVector = []float64{45, 44, 90}
 	if !v1.Eq2(v2) {
-		t.Logf("Vectors are expected to be eqal")
+		t.Logf("Vectors are expected to be equal")
 		t.Fail()
 	}
 }
@@ -65,7 +65,7 @@ func TestVectorSub(t *testing.T) {
 		v1[1]-v2[1],
 	)
 	if !v3.Eq(expect) {
-		t.Log("Subtraction failed, expecting %s, got %s", expect, v3)
+		t.Logf("Substraction failed, expecting %s, got %s", expect, v3)
 		t.Fail()
 	}
 	t.Log(v1, "-", v2, "=", v3)
@@ -87,12 +87,11 @@ func TestVectorScale(t *testing.T) {
 }
 
 func TestVectorMag(t *testing.T) {
-	cases := []struct{
-		vec SimpleVector
+	cases := []struct {
+		vec      SimpleVector
 		expected float64
-
 	}{
-    	{New(1.2, 3.4), math.Sqrt(1.2*1.2 + 3.4*3.4)},
+		{New(1.2, 3.4), math.Sqrt(1.2*1.2 + 3.4*3.4)},
 		{New(-0.21, 7.47), math.Sqrt(-0.21*-0.21 + 7.47*7.47)},
 		{New(1.43, -5.40), math.Sqrt(1.43*1.43 + -5.40*-5.40)},
 		{New(-2.07, -9.0), math.Sqrt(-2.07*-2.07 + -9.0*-9.0)},
@@ -100,7 +99,7 @@ func TestVectorMag(t *testing.T) {
 	for _, c := range cases {
 		mag := c.vec.Mag()
 		if mag != c.expected {
-			t.Errorf("Magnitude failed, execpted %d, got %d", c.expected, mag)
+			t.Errorf("Magnitude failed, expected %f, got %f", c.expected, mag)
 		}
 	}
 }
@@ -137,7 +136,7 @@ func TestVectorAngle(t *testing.T) {
 	actual := v1.Angle(v2)
 	expect := math.Acos(v1.DotProd(v2) / (v1.Mag() * v2.Mag()))
 	if actual != expect {
-		t.Logf("Vector angle failed, expecting %d, got %d", expect, actual)
+		t.Logf("Vector angle failed, expecting %f, got %f", expect, actual)
 		t.Fail()
 	}
 	t.Log("Angle between", v1, "and", v2, "=", actual)
