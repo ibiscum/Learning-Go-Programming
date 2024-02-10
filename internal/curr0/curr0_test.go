@@ -2,7 +2,7 @@ package curr0
 
 import "testing"
 
-var data = "../data.csv"
+var data = "./data.csv"
 
 func TestLoad(t *testing.T) {
 	table := Load(data)
