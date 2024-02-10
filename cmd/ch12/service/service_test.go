@@ -52,7 +52,7 @@ func TestVectorDotProd(t *testing.T) {
 		t.Fatal(err)
 	}
 	if actual != result {
-		t.Fatalf("Expecting actual %d, got %d", actual, result)
+		t.Fatalf("Expecting actual %f, got %f", actual, result)
 	}
 }
 
@@ -70,7 +70,7 @@ func TestVectorMag(t *testing.T) {
 		t.Fatal(err)
 	}
 	if actual != result {
-		t.Fatalf("Expecting actual %d, got %d", actual, result)
+		t.Fatalf("Expecting actual %f, got %f", actual, result)
 	}
 }
 
