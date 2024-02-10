@@ -23,7 +23,7 @@ func add(resp http.ResponseWriter, req *http.Request) {
 	result := params[0].Add(params[1])
 	if err := json.NewEncoder(resp).Encode(&result); err != nil {
 		resp.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprintf(resp, err.Error())
+		fmt.Fprintf(resp, "%s\n", err.Error())
 		return
 	}
 }
@@ -43,7 +43,7 @@ func sub(resp http.ResponseWriter, req *http.Request) {
 	result := params[0].Sub(params[1])
 	if err := json.NewEncoder(resp).Encode(&result); err != nil {
 		resp.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprintf(resp, err.Error())
+		fmt.Fprintf(resp, "%s\n", err.Error())
 		return
 	}
 }
@@ -63,7 +63,7 @@ func dotProd(resp http.ResponseWriter, req *http.Request) {
 	result := params[0].DotProd(params[1])
 	if err := json.NewEncoder(resp).Encode(&result); err != nil {
 		resp.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprintf(resp, err.Error())
+		fmt.Fprint(resp, err.Error())
 		return
 	}
 }
@@ -78,7 +78,7 @@ func mag(resp http.ResponseWriter, req *http.Request) {
 	result := param.Mag()
 	if err := json.NewEncoder(resp).Encode(&result); err != nil {
 		resp.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprintf(resp, err.Error())
+		fmt.Fprint(resp, err.Error())
 		return
 	}
 }
@@ -93,7 +93,7 @@ func unit(resp http.ResponseWriter, req *http.Request) {
 	result := param.Unit()
 	if err := json.NewEncoder(resp).Encode(&result); err != nil {
 		resp.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprintf(resp, err.Error())
+		fmt.Fprint(resp, err.Error())
 		return
 	}
 }
