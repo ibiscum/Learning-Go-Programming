@@ -1,5 +1,6 @@
 
-
+[![CodeQL](https://github.com/ibiscum/Learning-Go-Programming/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ibiscum/Learning-Go-Programming/actions/workflows/github-code-scanning/codeql)
+[![Go](https://github.com/ibiscum/Learning-Go-Programming/actions/workflows/go.yml/badge.svg)](https://github.com/ibiscum/Learning-Go-Programming/actions/workflows/go.yml)
 
 # Learning Go Programming
 This is the code repository for [Learning Go Programming](https://www.packtpub.com/application-development/learning-go-programming?utm_source=github&utm_medium=repository&utm_campaign=9781784395438), published by Packt. It contains all the supporting project files necessary to work through the book from start to finish.
