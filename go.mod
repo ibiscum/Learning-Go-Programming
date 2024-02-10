@@ -1,6 +1,6 @@
-module github.com/ibiscum/Learning-Go-Programming/ch03
+module github.com/ibiscum/Learning-Go-Programming
 
-go 1.20
+go 1.22.0
 
 require gotest.tools/v3 v3.5.1
 
