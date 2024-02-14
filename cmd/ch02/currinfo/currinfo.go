@@ -1,6 +1,6 @@
 package main
 
-import "github.com/ibiscum/Learning-Go-Programming/ch02lib"
+import "github.com/ibiscum/Learning-Go-Programming/internal/ch02lib"
 
 func main() {
 	currency := "US Dollar"
