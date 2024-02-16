@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -19,6 +20,9 @@ func main() {
 	defer fout.Close()
 
 	for _, row := range rows {
-		fout.WriteString(row)
+		_, err = fout.WriteString(row)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 }

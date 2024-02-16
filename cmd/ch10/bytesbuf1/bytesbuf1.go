@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -14,11 +15,14 @@ func main() {
 	books.WriteString("Les Miserables\n")
 	books.WriteString("The Call of the Wild\n")
 
-	file, err := os.Create("./books.txt")
+	file, err := os.Create("./books.data")
 	if err != nil {
 		fmt.Println("Unable to create file:", err)
 		return
 	}
 	defer file.Close()
-	books.WriteTo(file)
+	_, err = books.WriteTo(file)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
