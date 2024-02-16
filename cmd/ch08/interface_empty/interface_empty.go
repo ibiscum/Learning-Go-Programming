@@ -7,6 +7,8 @@ import (
 func main() {
 	var anyType interface{}
 	anyType = 77.0
+	fmt.Println(anyType)
+
 	anyType = "I am a string now"
 	fmt.Println(anyType)
 

@@ -9,13 +9,13 @@ type shape interface {
 	area() float64
 }
 
-type polygon interface {
-	perim()
-}
+// type polygon interface {
+// 	perim()
+// }
 
-type curved interface {
-	circonf()
-}
+// type curved interface {
+// 	circonf()
+// }
 
 type rect struct {
 	name           string
@@ -31,10 +31,7 @@ func (r *rect) perim() float64 {
 }
 
 func (r *rect) String() string {
-	return fmt.Sprintf(
-		"%s[lenght:%.2f height:%.2f]",
-		r.name, r.length, r.height,
-	)
+	return fmt.Sprintf("%s[length:%.2f height:%.2f]", r.name, r.length, r.height)
 }
 
 type triangle struct {
@@ -81,13 +78,20 @@ func shapeInfo(s shape) string {
 	return fmt.Sprintf("Area = %.2f", s.area())
 }
 
+// func polygonInfo(p polygon) string {
+// 	return fmt.Sprintf("Perimeter = %.2f", 1000.0) // TBD
+// }
+
 func main() {
 	r := &rect{"Square", 4.0, 4.0}
 	fmt.Println(r, "=>", shapeInfo(r))
+	fmt.Println("perim", r, "=>", r.perim())
 
 	t := &triangle{"Right Triangle", 1, 2, 3}
 	fmt.Println(t, "=>", shapeInfo(t))
+	fmt.Println("perim", t, "=>", t.perim())
 
 	c := &circle{"Small circle", 20}
 	fmt.Println(c, "=>", shapeInfo(c))
+	fmt.Println("circonf", c, "=>", c.circonf())
 }

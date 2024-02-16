@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 
@@ -36,6 +37,9 @@ func (a *alphaReader) Read(p []byte) (int, error) {
 func main() {
 	file, _ := os.Open("./reader2.go")
 	alpha := NewAlphaReader(file)
-	io.Copy(os.Stdout, alpha)
+	_, err := io.Copy(os.Stdout, alpha)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println()
 }
