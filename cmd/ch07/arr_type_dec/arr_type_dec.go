@@ -5,8 +5,7 @@ import "fmt"
 type matrix [2][2][2][2]byte
 
 func main() {
-	var mat1 matrix
-	mat1 = initMat()
+	var mat1 matrix = initMat()
 	fmt.Println(mat1)
 }
 

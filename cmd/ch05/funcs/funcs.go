@@ -50,7 +50,6 @@ func isPrime(n int) bool {
 		if (n % p) == 0 {
 			return false
 		}
-
 	}
 	return true
 }
@@ -160,16 +159,25 @@ func main() {
 	fmt.Println("func add(op0,op1 int) int {return op0+op1}")
 	fmt.Println("addition := add")
 	fmt.Printf("addition(3,7) = %d\n", addition(3, 7))
+
 	fmt.Printf("doBinary(f func(int,int)int, int,int) -> doBinary(addition,12,4) = %d\n", doBinary(addition, 12, 4))
-	fmt.Println("mul := func(i,j int) int { return i * j}")
+
+	fmt.Println("mul := func(i,j int) int {return i * j}")
 	fmt.Printf("mul(25,7) = %d\n", mul(25, 7))
-	fmt.Println("sqr := func (i int) int {return mul(i,i)")
-	fmt.Printf("sql(13) = %d\n", sqr(13))
+
+	fmt.Println("sub := func(op0, op1 int) int {return op0 - op1}")
+	fmt.Printf("sub(25,7) = %d\n", sub(25, 7))
+
+	fmt.Println("sqr := func(i int) int {return mul(i,i)")
+	fmt.Printf("sqr(13) = %d\n", sqr(13))
+
 	fmt.Printf("doUnary(f func(int)int, int) -> doUnary(sqr, 12) = %d\n", doUnary(sqr, 12))
 
 	// multi-result functions
 	q, r := div(71, 5)
 	fmt.Printf("div(71,5) -> q = %d, r = %d\n", q, r)
+	q, r = div2(71, 5)
+	fmt.Printf("div2(71,5) -> q = %d, r = %d\n", q, r)
 
 	// anonymous function def/call
 	fmt.Printf(
@@ -183,7 +191,7 @@ func main() {
 	nums := []int{4, 32, 11, 77, 556, 3, 19, 88, 422, 21, 52, 97, 123}
 	fmt.Println("nums := ", nums)
 
-	fmt.Println("Squqre nums: apply(nums,func(int i)int{return i * i})")
+	fmt.Println("Square nums: apply(nums,func(int i)int{return i * i})")
 	apply(nums, func(i int) int {
 		return i * i
 	})

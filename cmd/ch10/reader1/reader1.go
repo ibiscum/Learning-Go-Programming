@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"strings"
 )
@@ -37,6 +38,9 @@ func (a *alphaReader) Read(p []byte) (int, error) {
 func main() {
 	str := strings.NewReader("Hello! Where is the sun?")
 	alpha := NewAlphaReader(str)
-	io.Copy(os.Stdout, alpha)
+	_, err := io.Copy(os.Stdout, alpha)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println()
 }

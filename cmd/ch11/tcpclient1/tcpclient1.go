@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"net"
 	"time"
 )
@@ -45,8 +46,12 @@ func main() {
 		}
 
 		// stream and display response
-		conn.SetReadDeadline(time.Now().Add(time.Millisecond * 5000))
-		conbuf := bufio.NewReaderSize(conn, 1024)
+		err = conn.SetReadDeadline(deadline)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		conbuf := bufio.NewReaderSize(conn, buffLen)
 		for {
 			str, err := conbuf.ReadString('\n')
 			if err != nil {
