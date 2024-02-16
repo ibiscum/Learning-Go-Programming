@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func main() {
 	hist := make(map[string]int, 6)
@@ -17,7 +20,10 @@ func main() {
 	save(hist, "Nov", 831)
 	save(hist, "Dec", 312)
 	save(hist, "Dec0", 332)
-	remove(hist, "Dec0")
+	err := remove(hist, "Dec0")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	for key, val := range hist {
 		adjVal := int(float64(val) * 0.100)
@@ -43,7 +49,7 @@ func save(store map[string]int, key string, value int) {
 func remove(store map[string]int, key string) error {
 	_, ok := store[key]
 	if !ok {
-		return fmt.Errorf("Key not found")
+		return fmt.Errorf("key not found")
 	}
 	delete(store, key)
 	return nil

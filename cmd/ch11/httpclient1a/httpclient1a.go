@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 )
@@ -14,5 +15,8 @@ func main() {
 		return
 	}
 	defer resp.Body.Close()
-	io.Copy(os.Stdout, resp.Body)
+	_, err = io.Copy(os.Stdout, resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

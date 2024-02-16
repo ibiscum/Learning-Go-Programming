@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 )
@@ -23,5 +24,8 @@ func main() {
 		ReadTimeout:  time.Second * 5,
 		WriteTimeout: time.Second * 3,
 	}
-	server.ListenAndServe()
+	err := server.ListenAndServe()
+	if err != nil {
+		log.Fatal(err)
+	}
 }

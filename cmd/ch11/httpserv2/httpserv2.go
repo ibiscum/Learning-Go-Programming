@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -17,5 +18,8 @@ func (m msg) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 // using default server
 func main() {
 	msgHandler := msg("Hello from high above!")
-	http.ListenAndServe(":4040", msgHandler)
+	err := http.ListenAndServe(":4040", msgHandler)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

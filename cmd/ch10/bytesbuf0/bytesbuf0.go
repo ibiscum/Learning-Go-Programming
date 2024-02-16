@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"log"
 	"os"
 )
 
@@ -13,5 +14,8 @@ func main() {
 	books.WriteString("Les Miserables\n")
 	books.WriteString("The Call of the Wild")
 
-	books.WriteTo(os.Stdout)
+	_, err := books.WriteTo(os.Stdout)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

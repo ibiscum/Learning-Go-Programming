@@ -1,6 +1,9 @@
 package main
 
-import "math/big"
+import (
+	"fmt"
+	"math/big"
+)
 
 // recursive factorial with big package
 func f(n int) *big.Int {
@@ -12,4 +15,7 @@ func f(n int) *big.Int {
 	return result.Mul(f(n-1), next)
 }
 
-func main() {}
+func main() {
+	result := f(20)
+	fmt.Println(result)
+}
