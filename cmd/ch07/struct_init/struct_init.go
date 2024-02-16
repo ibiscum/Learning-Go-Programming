@@ -40,6 +40,7 @@ var (
 )
 
 func main() {
+	fmt.Printf("empty %T\n", empty)
 	fmt.Printf("car %T\n", car)
 	fmt.Printf("currency %T\n", currency)
 	fmt.Printf("node %T\n", node)

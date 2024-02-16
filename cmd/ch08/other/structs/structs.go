@@ -83,4 +83,7 @@ func main() {
 	fmt.Printf("%v = %v\n", gals, gals.toQuart())
 	ozs := gals.toQuart().toCup().toOunce()
 	fmt.Printf("%v = %v\n", gals, ozs)
+	cup := ozs.toCup()
+	fmt.Printf("%v = %v\n", ozs, cup)
+
 }

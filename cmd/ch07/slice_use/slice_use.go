@@ -5,14 +5,14 @@ import (
 )
 
 func scale(factor float64, vector []float64) []float64 {
-	for i, _ := range vector {
+	for i := range vector {
 		vector[i] *= factor
 	}
 	return vector
 }
 
 func scale2(factor float64, vector []float64) {
-	for i, _ := range vector {
+	for i := range vector {
 		vector[i] *= factor
 	}
 }

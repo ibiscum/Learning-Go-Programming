@@ -35,8 +35,6 @@ var currencies = []Curr{
 	{"NZD", "New Zeland Dollar", "Tokelau", 554},
 }
 
-var sortedCurrs []Curr
-
 func main() {
 	fmt.Println("Currencies")
 	fmt.Println("----------")
