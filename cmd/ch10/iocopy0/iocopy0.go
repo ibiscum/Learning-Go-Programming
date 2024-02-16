@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"strings"
 )
@@ -14,5 +15,8 @@ func main() {
 		fmt.Println("Unable to create file:", err)
 		os.Exit(1)
 	}
-	io.Copy(file, data)
+	_, err = io.Copy(file, data)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

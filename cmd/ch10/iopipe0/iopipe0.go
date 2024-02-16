@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 
@@ -21,7 +22,10 @@ func main() {
 
 	wait := make(chan struct{})
 	go func() {
-		io.Copy(file, pr)
+		_, err = io.Copy(file, pr)
+		if err != nil {
+			log.Fatal(err)
+		}
 		pr.Close()
 		close(wait)
 	}()
