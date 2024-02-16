@@ -1,8 +1,9 @@
 package main
 
-import "fmt"
-
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 // simple handler, no multiplex
 type msg string

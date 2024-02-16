@@ -15,7 +15,7 @@ func half(val *float64) {
 }
 
 func double(val float64) {
-	val = val * 2
+	// val = val * 2
 }
 
 func main() {

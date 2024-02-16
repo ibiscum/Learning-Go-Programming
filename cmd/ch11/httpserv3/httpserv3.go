@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -22,5 +23,8 @@ func main() {
 	mux.HandleFunc("/hello", hello)
 	mux.HandleFunc("/goodbye", goodbye)
 
-	http.ListenAndServe(":4040", mux)
+	err := http.ListenAndServe(":4040", mux)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

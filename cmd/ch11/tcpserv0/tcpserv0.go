@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net"
 	"os"
 	"strings"
@@ -56,29 +57,38 @@ func handleConnection(conn net.Conn) {
 		case "GET":
 			result := curr.Find(currencies, param)
 			if len(result) == 0 {
-				conn.Write([]byte("Nothing found\n"))
+				_, err = conn.Write([]byte("Nothing found\n"))
+				if err != nil {
+					log.Fatal(err)
+				}
+
 				continue
 			}
 			// stream result to client
 			for _, cur := range result {
-				_, err := fmt.Fprintf(
-					conn,
-					"%s %s %s %s\n",
-					cur.Name, cur.Code, cur.Number, cur.Country,
-				)
+				_, err := fmt.Fprintf(conn, "%s %s %s %s\n", cur.Name, cur.Code, cur.Number, cur.Country)
 				if err != nil {
 					return
 				}
 
 				// reset deadline while writing,
 				// causes server to close conn if client is gone
-				conn.SetWriteDeadline(time.Now().Add(time.Second * 5))
+				err = conn.SetWriteDeadline(time.Now().Add(time.Second * 5))
+				if err != nil {
+					log.Fatal(err)
+				}
 			}
 			// reset read deadline for next read
-			conn.SetWriteDeadline(time.Time{})
+			err = conn.SetWriteDeadline(time.Time{})
+			if err != nil {
+				log.Fatal(err)
+			}
 
 		default:
-			conn.Write([]byte("Invalid command\n"))
+			_, err = conn.Write([]byte("Invalid command\n"))
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
 }
