@@ -5,7 +5,7 @@ import "fmt"
 type gallon float64
 
 func (g gallon) half() {
-	g = gallon(g * 0.5)
+	// g = gallon(g * 0.5)
 }
 
 func (g *gallon) double() {

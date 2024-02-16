@@ -9,7 +9,6 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strconv"
 )
@@ -20,7 +19,7 @@ var fileMode = 4000
 var nums bytes.Buffer
 
 func loadNumberMap() error {
-	data, err := ioutil.ReadFile(mapFile)
+	data, err := os.ReadFile(mapFile)
 	if err != nil {
 		return err
 	}
@@ -41,11 +40,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	err := ioutil.WriteFile(numbersFile, nums.Bytes(), os.FileMode(fileMode))
+	err := os.WriteFile(numbersFile, nums.Bytes(), os.FileMode(fileMode))
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("Created numers data file", numbersFile, "OK.")
-
+	fmt.Println("Created numbers data file", numbersFile, "OK.")
 }

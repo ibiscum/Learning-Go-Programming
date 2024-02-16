@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 )
@@ -22,6 +23,9 @@ func main() {
 	}
 	defer file.Close()
 
-	io.Copy(file, resp.Body)
+	_, err = io.Copy(file, resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println("Text copied to file", file.Name())
 }

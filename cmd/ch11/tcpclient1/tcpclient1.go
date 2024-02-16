@@ -58,8 +58,10 @@ func main() {
 				break
 			}
 			fmt.Print(str)
-			conn.SetReadDeadline(time.Now().Add(time.Millisecond * 700))
+			err = conn.SetReadDeadline(time.Now().Add(time.Millisecond * 700))
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
-
 }
