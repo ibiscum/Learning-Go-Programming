@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 
@@ -45,7 +46,10 @@ func gui(resp http.ResponseWriter, req *http.Request) {
 		fmt.Println(err)
 		return
 	}
-	io.Copy(resp, file)
+	_, err = io.Copy(resp, file)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {

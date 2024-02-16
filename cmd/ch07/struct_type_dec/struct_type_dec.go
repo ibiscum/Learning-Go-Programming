@@ -16,6 +16,7 @@ type address struct {
 func makePerson() person {
 	addr := address{
 		city:   "Goville",
+		street: "Golang 25",
 		state:  "Go",
 		postal: "12345",
 	}

@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/ibiscum/Learning-Go-Programming/internal/curr1"
@@ -16,6 +17,9 @@ func main() {
 	var param string
 	fmt.Print("Currency> ")
 	_, err := fmt.Scanf("%s", &param)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// encode request
 	buf := new(bytes.Buffer)

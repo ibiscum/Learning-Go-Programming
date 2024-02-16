@@ -5,6 +5,7 @@ import (
 	"crypto/sha1"
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 
@@ -28,7 +29,10 @@ func main() {
 
 	sha := sha1.New()
 	data := io.TeeReader(fin, sha) //hash, pass-through data
-	io.Copy(zip, data)
+	_, err = io.Copy(zip, data)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Printf("Calculated SHA1 hash %x\n", sha.Sum(nil))
 }

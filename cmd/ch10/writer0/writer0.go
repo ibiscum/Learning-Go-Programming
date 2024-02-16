@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type channelWriter chan byte
 
@@ -25,7 +28,10 @@ func (c channelWriter) Write(p []byte) (int, error) {
 func main() {
 	data := []byte("Stream me!")
 	cw := channelWriter(make(chan byte, len(data)))
-	cw.Write(data)
+	_, err := cw.Write(data)
+	if err != nil {
+		log.Fatal(err)
+	}
 	for c := range cw {
 		fmt.Println(c)
 	}

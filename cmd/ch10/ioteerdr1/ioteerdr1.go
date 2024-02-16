@@ -6,6 +6,7 @@ import (
 	"crypto/sha1"
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 
@@ -30,7 +31,10 @@ func main() {
 	sha := sha1.New()
 	md := md5.New()
 	data := io.TeeReader(io.TeeReader(fin, md), sha) // compose stream
-	io.Copy(zip, data)
+	_, err = io.Copy(zip, data)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	fmt.Printf("Calculated SHA1 %x\n", sha.Sum(nil))
 	fmt.Printf("Calculated MD5 %x\n", md.Sum(nil))

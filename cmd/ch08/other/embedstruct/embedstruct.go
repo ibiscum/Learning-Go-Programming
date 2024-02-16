@@ -72,7 +72,7 @@ func (c cup) toOunce() ounce {
 	return newOz(c.qty * c.ozFactor)
 }
 
-//ounce type
+// ounce type
 type ounce struct {
 	volume
 	cupFactor float64
@@ -94,4 +94,6 @@ func main() {
 	fmt.Printf("%v = %v\n", gals, gals.toQuart())
 	ozs := gals.toQuart().toCup().toOunce()
 	fmt.Printf("%v = %v\n", gals, ozs)
+	cup := ozs.toCup()
+	fmt.Printf("%v = %v\n", cup, ozs)
 }
