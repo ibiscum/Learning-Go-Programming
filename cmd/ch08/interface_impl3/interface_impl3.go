@@ -5,19 +5,19 @@ import (
 	"math"
 )
 
-type shape interface {
-	area() float64
-}
+// type shape interface {
+// 	area() float64
+// }
 
-type polygon interface {
-	shape
-	perim()
-}
+// type polygon interface {
+// 	shape
+// 	perim()
+// }
 
-type curved interface {
-	shape
-	circonf()
-}
+// type curved interface {
+// 	shape
+// 	circonf()
+// }
 
 type rect struct {
 	name           string
@@ -68,7 +68,7 @@ func (c *circle) area() float64 {
 	return math.Pi * (c.rad * c.rad)
 }
 
-func (c *circle) circonf() float64 {
+func (c *circle) circumf() float64 {
 	return 2 * math.Pi * c.rad
 }
 
@@ -86,10 +86,16 @@ func shapeInfo(s interface{}) string {
 func main() {
 	r := &rect{"Square", 4.0, 4.0}
 	fmt.Println(r, "=>", shapeInfo(r))
+	fmt.Println("area", r, "=>", r.area())
+	fmt.Println("perimeter", r, "=>", r.perim())
 
 	t := &triangle{"Right Triangle", 1, 2, 3}
 	fmt.Println(t, "=>", shapeInfo(t))
+	fmt.Println("area", t, "=>", t.area())
+	fmt.Println("perimeter", t, "=>", t.perim())
 
 	c := &circle{"Small circle", 20}
 	fmt.Println(c, "=>", shapeInfo(c))
+	fmt.Println("area", c, "=>", c.area())
+	fmt.Println("circumference", c, "=>", c.circumf())
 }
