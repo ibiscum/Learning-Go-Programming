@@ -16,6 +16,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -83,7 +84,10 @@ func write(fname string, anagrams map[string][]string) {
 
 	for k, v := range anagrams {
 		output := fmt.Sprintf("%s -> %v\n", k, v)
-		file.WriteString(output)
+		_, err := file.WriteString(output)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 

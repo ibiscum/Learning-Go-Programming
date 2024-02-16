@@ -16,6 +16,8 @@ func main() {
 	fmt.Printf("%T: %v\n", weekdays, weekdays)
 	fmt.Printf("%T: %v\n", truth, truth)
 	fmt.Printf("%T: %v\n", histogram, histogram)
+	fmt.Printf("%T: %v\n", board, board)
+	fmt.Printf("%T: %v\n", matrix, matrix)
 
 	printDays(days)
 }

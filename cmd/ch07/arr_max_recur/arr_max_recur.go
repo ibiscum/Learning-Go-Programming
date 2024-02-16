@@ -1,8 +1,9 @@
 package main
 
-import "fmt"
-import "math/rand"
-import "time"
+import (
+	"fmt"
+	"math/rand"
+)
 
 const (
 	size     = 1000
@@ -14,14 +15,12 @@ var (
 )
 
 func init() {
-	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < size; i++ {
 		nums[i] = rand.Intn(variance)
 	}
 }
 
 func max(lo, hi int, nums [size]int) int {
-	rand.Seed(time.Now().UnixNano())
 	if lo == hi {
 		return nums[lo]
 	}

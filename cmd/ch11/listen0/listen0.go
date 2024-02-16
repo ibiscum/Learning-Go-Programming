@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net"
 )
 
@@ -19,7 +20,10 @@ func main() {
 			fmt.Println(err)
 			return
 		}
-		conn.Write([]byte("Nice to meet you!"))
+		_, err = conn.Write([]byte("Nice to meet you!"))
+		if err != nil {
+			log.Fatal(err)
+		}
 		conn.Close()
 	}
 
