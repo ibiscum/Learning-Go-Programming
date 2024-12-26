@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
 func main() {
@@ -13,7 +14,10 @@ func main() {
 		}(j)
 	}
 
-	fmt.Scanln() // wait for enter
+	_, err := fmt.Scanln() // wait for enter
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func count(start, stop, delta int) {
